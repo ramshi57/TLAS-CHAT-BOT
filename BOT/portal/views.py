@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import *
 
 import numpy as np
 import pandas as pd
