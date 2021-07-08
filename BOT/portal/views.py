@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect
-from django.http import *
+
 
 import numpy as np
 import pandas as pd
@@ -42,7 +42,7 @@ def Chatbot_Page(request):
             user_response = x
             user_response = user_response.lower()
             InputTraffic.append(user_response)
-            if(user_response not in ['bye','shutdown','exit', 'quit']):
+            if(user_response not in ['bye','shutdown','exit', 'quit','thank you']):
                     if(welcome(user_response)!=None):
                         wResponse  = welcome(user_response)
                         welcomeResponse.append(wResponse)
@@ -52,6 +52,8 @@ def Chatbot_Page(request):
                         cResponse = bot(user_response)
                         welcomeResponse.append(cResponse)
                         # print('welcomeResponse',welcomeResponse)
+            else:
+                 welcomeResponse.append('thank you')			
 
             welcomeTrafficResponse = zip(InputTraffic,welcomeResponse)
             context = {'welcomeTrafficResp':welcomeTrafficResponse} 
