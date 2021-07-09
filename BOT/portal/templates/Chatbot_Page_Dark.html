@@ -287,9 +287,22 @@
                             <div class="msg-info-name">TrafficBot</div>
                             <div class="msg-info-time"></div>
                         </div>
-                        <div class="msg-text">
+		        <div id="greeting" >My name is TLAS. I will answer your queries... 😄</div>
+                            <script>
+                             var dt = new Date().getHours();
+                                if (dt >= 0 && dt <= 11){
+                                document.getElementById("greeting").innerHTML='Good Morning, My name is TLAS. I will answer your queries... 😄'
+                                }
+                                else if (dt >= 12 && dt <= 17){
+                                    document.getElementById("greeting").innerHTML='Good Afternoon, My name is TLAS. I will answer your queries... 😄'
+                                }
+                                else {
+                                    document.getElementById("greeting").innerHTML='Good Evening, My name is TLAS. I will answer your queries... 😄'
+                                }
+                            </script>   
+                        <!--<div class="msg-text">
                             Hi, welcome to Government Portal Of Traffic Support 😄
-                        </div>
+                        </div>-->
                     </div>
                 </div>
                 {% if welcomeTrafficResp %}
