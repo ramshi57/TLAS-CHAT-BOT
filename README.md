@@ -9,7 +9,7 @@ Technology used : Django (Python Framework), SQLite, HTML5, Materialize CSS.
 ![](BOT/images/entery_page.png)
 
 #### 2.Chatbot Page(Light theme) :
-
+![](BOT/images/chatbot_light.png)
 
 #### 3.Chatbot Page(Dark theme) :
-
+![](BOT/images/chatbot_dark.png)
