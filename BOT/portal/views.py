@@ -58,7 +58,7 @@ def Chatbot_Page(request):
                         welcomeResponse.append(cResponse)
                         # print('welcomeResponse',welcomeResponse)
             else:
-                 welcomeResponse.append('thank you')			
+                 welcomeResponse.append('Bye! take care..')			
 
             welcomeTrafficResponse = zip(InputTraffic,welcomeResponse)
             context = {'welcomeTrafficResp':welcomeTrafficResponse} 
