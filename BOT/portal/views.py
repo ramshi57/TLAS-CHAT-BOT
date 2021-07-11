@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect
-#import pywhatkit as kit
 import webbrowser
 
 import numpy as np
@@ -50,7 +49,6 @@ def Chatbot_Page(request):
                         # print('welcomeResponse',welcomeResponse)
 		    elif "indian laws" in user_response:
                         welcomeResponse.append("You can find Indian laws here at Indian kanoon. Let me take you there..")
-                        #kit.search("https://indiankanoon.org")
                         webbrowser.open('https://indiankanoon.org')	
                     else:
                         # print("Chatbot : ",end="")
