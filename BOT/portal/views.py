@@ -51,7 +51,6 @@ def Chatbot_Page(request):
                         welcomeResponse.append("You can find Indian laws here at Indian kanoon. Let me take you there..")
                         webbrowser.open('https://indiankanoon.org')	
                     else:
-                        # print("Chatbot : ",end="")
                         cResponse = bot(user_response)
                         welcomeResponse.append(cResponse)
                         # print('welcomeResponse',welcomeResponse)
