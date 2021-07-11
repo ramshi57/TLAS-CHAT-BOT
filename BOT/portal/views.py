@@ -20,8 +20,8 @@ def Entry_Page(request):
 def Chatbot_Page(request):
     if request.method == "POST":
         x = request.POST['message']
-        welcome = "Chatbot : You are welcome.."
-        bye = "Chatbot : Bye!!! "
+        #welcome = "Chatbot : You are welcome.."
+        #bye = "Chatbot : Bye!!! "
        
         if x:
             vectorizer = CountVectorizer()
@@ -32,7 +32,11 @@ def Chatbot_Page(request):
             def bot(user_response):
                 text = vectorizer.transform([user_response]).toarray()
                 df['similarity'] = cosine_similarity(count_vec, text)
-                return df.sort_values(['similarity'], ascending=False).iloc[0]['Answers']
+		sim_val=df.sort_values(['similarity'], ascending=False).iloc[0]['similarity']
+		if sim_val > 0.60:
+                    return df.sort_values(['similarity'], ascending=False).iloc[0]['Answers']
+                else:
+                    return "I am sorry! I don't understand you"
             
             def welcome(user_response):
                 for word in user_response.split():
