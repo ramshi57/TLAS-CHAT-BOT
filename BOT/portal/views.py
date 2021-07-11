@@ -32,8 +32,8 @@ def Chatbot_Page(request):
             def bot(user_response):
                 text = vectorizer.transform([user_response]).toarray()
                 df['similarity'] = cosine_similarity(count_vec, text)
-		sim_val=df.sort_values(['similarity'], ascending=False).iloc[0]['similarity']
-		if sim_val > 0.60:
+                sim_val=df.sort_values(['similarity'], ascending=False).iloc[0]['similarity']
+                if sim_val > 0.60:
                     return df.sort_values(['similarity'], ascending=False).iloc[0]['Answers']
                 else:
                     return "I am sorry! I don't understand you"
@@ -51,7 +51,7 @@ def Chatbot_Page(request):
                         wResponse  = welcome(user_response)
                         welcomeResponse.append(wResponse)
                         # print('welcomeResponse',welcomeResponse)
-		    elif "indian laws" in user_response:
+                    elif "indian laws" in user_response:
                         welcomeResponse.append("You can find Indian laws here at Indian kanoon. Let me take you there..")
                         webbrowser.open('https://indiankanoon.org')	
                     else:
@@ -65,5 +65,4 @@ def Chatbot_Page(request):
             context = {'welcomeTrafficResp':welcomeTrafficResponse} 
             return render(request,'Chatbot_Page_Dark.html',context) 
 
-    return render(request,'Chatbot_Page_Dark.html')    
-
+    return render(request,'Chatbot_Page_Dark.html')
