@@ -27,7 +27,7 @@ def Chatbot_Page(request):
         if x:
             vectorizer = CountVectorizer()
             count_vec = vectorizer.fit_transform(df['Questions']).toarray()
-            welcome_input = ("hello", "hi", "greetings", "sup", "what's up","hey")
+            welcome_input = ("hello", "hi","hai", "greetings", "sup", "what's up","hey")
             welcome_response = ["hey", "hi there", "hello", "I am glad! You are talking to me"]
 
             def bot(user_response):
